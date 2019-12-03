@@ -9,28 +9,28 @@ Tutorial: https://sharifuli.com/2018/02/23/gpgpu-cuda-color-space/
 To run:
 -------
 
-1. Command for compilation: "make"
+1. Command for compilation: `make`
 
-2. Command for running the program (after compilation): "./mycode"
+2. Command for running the program (after compilation): `./mycode`
 
-3. Command for cleaning the previous output (should be run initially): "make clean"
+3. Command for cleaning the previous output (should be run initially): `make clean`
 
 4. Sample Output and Execution Steps:
 
 --Cleaning the previous output
-
+```
 askapoor@asb10928u-c04:~/Downloads/886-a2$ make clean
 rm -f out_rgb.ppm out_rgb_cpu.ppm out_yuv_cpu.yuv out_rgb.ppm out_yuv.yuv out_rgb_gpu.ppm out_rgb_gpu_copy_test.ppm out_yuv_gpu.yuv mycode main.o colour-convert.o
-
+```
 --Compiling the Code
-
+```
 abc@def:~/Downloads/886-a2$ make
 /usr/local/cuda-9.1/bin/nvcc -c main.cpp -I/usr/local/cuda-9.1/samples/common/inc
 /usr/local/cuda-9.1/bin/nvcc -c colour-convert.cu -I/usr/local/cuda-9.1/samples/common/inc
 /usr/local/cuda-9.1/bin/nvcc -o mycode main.o colour-convert.o 
-
+```
 --Running the Code
-
+```
 abc@def:~/Downloads/886-a2$ ./mycode
 Running colour space converter .
 Image size: 1000 x 700
@@ -75,6 +75,6 @@ Not similar by small percentage
 Starting CPU processing...
 RGB to YUV conversion time: 19.236000 (ms)
 YUV to RGB conversion time: 11.514000 (ms)
-
+```
 
 5. Out of Memory Issues (Blacked-Out Image): When testing with the larger image please make sure that there is enough memory in the system and GPU. Otherwise the output would be Blacked-Out from certain parts and a chance of Segmentation Fault.

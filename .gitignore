@@ -1,0 +1,8 @@
+colour-convert.o
+main.o
+mycode
+out_rgb.ppm
+out_rgb_gpu.ppm
+out_rgb_gpu_copy_test.ppm
+out_yuv.yuv
+out_yuv_gpu.yuv
